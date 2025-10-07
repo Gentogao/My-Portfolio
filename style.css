@@ -1,0 +1,209 @@
+/* ===== 1. PROFESSIONAL COLOR PALETTE (CSS VARIABLES) ===== */
+/* Dito mo lang papalitan ang kulay kung gusto mo ng ibang style sa susunod */
+:root {
+    --primary-color: #2c3e50;    /* Dark Slate Blue */
+    --accent-color: #3498db;     /* Bright Blue */
+    --background-color: #ecf0f1; /* Light Gray Background */
+    --text-color: #34495e;       /* Dark Gray Text */
+    --card-bg-color: #ffffff;    /* White */
+    --border-color: #bdc3c7;     /* Light Border Gray */
+}
+
+/* ===== GLOBAL STYLES ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 60px; /* Space for the fixed navbar */
+}
+
+/* ===== NAVIGATION BAR ===== */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    transition: background-color 0.3s;
+}
+
+.nav-links li a:hover {
+    background-color: var(--accent-color);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-container {
+    padding: 20px;
+}
+
+.content-section {
+    max-width: 900px;
+    margin: 20px auto;
+    background: var(--card-bg-color);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+
+.home-content {
+    text-align: center;
+    padding: 40px 0;
+}
+.home-content h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
+/* ===== UTILITY CLASS ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== RESUME STYLES ===== */
+.resume-container {
+    padding: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.header-left h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+.header-left p {
+    margin: 2px 0;
+    font-size: 0.9em;
+}
+.header-right .profile-pic {
+    width: 125px;
+    height: 125px;
+    object-fit: cover;
+    border: 3px solid var(--border-color);
+    border-radius: 50%; /* Gawing bilog para mas moderno */
+}
+.section {
+    margin-bottom: 25px;
+}
+.section-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+.entry {
+    display: flex;
+    margin-bottom: 15px;
+}
+.entry-date {
+    flex: 0 0 150px;
+}
+.entry-details {
+    flex: 1;
+}
+.entry-details h3 {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.entry-details p {
+    margin: 0;
+}
+.work-experience {
+    justify-content: space-between;
+}
+.skills-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+.reference-entry {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+/* ===== CONTACT SECTION STYLES ===== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-card i {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+}
+
+.contact-card p, .contact-card a {
+    margin: 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.95em;
+    word-break: break-all;
+}
+
+.contact-card a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
